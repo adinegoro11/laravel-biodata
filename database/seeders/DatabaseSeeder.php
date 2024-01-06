@@ -31,6 +31,24 @@ class DatabaseSeeder extends Seeder
             'remember_token' => Str::random(10),
         ]);
 
+        \App\Models\Education::factory()->create([
+            'type' => 'S1',
+            'school_name' => 'Universitas Indonesia',
+            'mayor' => 'Ilmu Komputer',
+            'graduation_year' => 2022,
+            'grade' => '3.80',
+            'user_id' => 2,
+        ]);
+
+        \App\Models\Education::factory()->create([
+            'type' => 'SMA',
+            'school_name' => 'SMA Negeri 1 Bogor',
+            'mayor' => 'IPA',
+            'graduation_year' => 2018,
+            'grade' => '50.80',
+            'user_id' => 2,
+        ]);
+
         \App\Models\User::factory(15)->create();
     }
 }
