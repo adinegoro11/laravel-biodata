@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Education;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class EducationController extends Controller
 {
@@ -18,9 +19,9 @@ class EducationController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('auth.register');
     }
 
     /**

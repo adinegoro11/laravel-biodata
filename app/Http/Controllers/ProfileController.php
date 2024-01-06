@@ -77,6 +77,9 @@ class ProfileController extends Controller
         return Redirect::to('/');
     }
 
+     /**
+     * Delete by admin.
+     */
     public function delete($id): RedirectResponse
     {
         User::destroy($id);
