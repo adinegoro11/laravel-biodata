@@ -17,10 +17,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return 'admin';
-        
-        return view('listing.index')->with('data', [
-            'listings' => User::all(),
+        return view('all-user',[
+            'users' => User::where('role','user')->get(),
+            'titles' => ['Nama','Tempat Lahir','Tanggal Lahir', 'Posisi yang Dilamar' ,'Aksi'],
         ]);
     }
 
@@ -69,5 +68,12 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    public function delete($id): RedirectResponse
+    {
+        User::destroy($id);
+        // return redirect('admin/products');
+        return Redirect::to('/profile.index');
     }
 }
