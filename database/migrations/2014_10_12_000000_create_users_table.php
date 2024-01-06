@@ -29,7 +29,6 @@ return new class extends Migration
             $table->string('related_person')->nullable();
             $table->string('willing_travel')->nullable();
             $table->bigInteger('expected_salary')->nullable();
-
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
