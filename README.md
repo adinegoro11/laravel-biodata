@@ -24,3 +24,13 @@ Running using:
 ```
 php artisan serve
 ```
+
+### Admin Login
+
+email: `admin@admin.com`
+password: `password`
+
+### User Login
+
+email: `user@user.com`
+password: `password`
