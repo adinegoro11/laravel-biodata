@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
-use Termwind\Components\Dd;
 
 class ProfileController extends Controller
 {
@@ -30,8 +29,18 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
+        $educations =  User::find(Auth::id())->educations;
         return view('profile.edit', [
             'user' => $request->user(),
+            'educations' => $educations,
+            'titles' => [
+                'Jenjang Pendidikan Terakhir',
+                'Nama Institusi Akademik',
+                'Jurusan',
+                'Tahun Lulus',
+                'IPK',
+                'Aksi',
+            ],
         ]);
     }
 
