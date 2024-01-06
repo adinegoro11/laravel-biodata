@@ -15,6 +15,21 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('applied_position')->nullable();
+            $table->string('id_card')->nullable();
+            $table->string('place_of_birth')->nullable();
+            $table->date('date_of_birth')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('religion')->nullable();
+            $table->string('blood_group')->nullable();
+            $table->string('marital_status')->nullable();
+            $table->text('address_origin')->nullable();
+            $table->text('address_now')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('related_person')->nullable();
+            $table->string('willing_travel')->nullable();
+            $table->bigInteger('expected_salary')->nullable();
+
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
