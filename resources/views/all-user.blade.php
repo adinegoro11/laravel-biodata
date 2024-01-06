@@ -31,10 +31,10 @@
                                         {{ $user->place_of_birth }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $user->date_of_birth }}
+                                        {{ date('d M Y', strtotime($user->date_of_birth)) }}
                                     </td>
                                     <td class="px-6 py-4">
-                                        {{ $user->applied_postion }}
+                                        {{ $user->applied_position }}
                                     </td>
                                     <td class="px-6 py-4">
 

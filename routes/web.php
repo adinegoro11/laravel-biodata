@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/all-profile', [ProfileController::class, 'index'])->name('profile.index');
-    Route::delete('/users', [ProfileController::class, 'delete'])->name('profile.delete');
+    Route::delete('/users/{id}', [ProfileController::class, 'delete'])->name('profile.delete');
 });
 
 require __DIR__.'/auth.php';

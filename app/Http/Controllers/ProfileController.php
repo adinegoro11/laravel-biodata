@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
+use Termwind\Components\Dd;
 
 class ProfileController extends Controller
 {
@@ -17,8 +18,9 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $users = User::where('role','user')->get();
         return view('all-user',[
-            'users' => User::where('role','user')->get(),
+            'users' => $users,
             'titles' => ['Nama','Tempat Lahir','Tanggal Lahir', 'Posisi yang Dilamar' ,'Aksi'],
         ]);
     }
@@ -59,21 +61,16 @@ class ProfileController extends Controller
         ]);
 
         $user = $request->user();
-
         Auth::logout();
-
         $user->delete();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return Redirect::to('/');
     }
 
     public function delete($id): RedirectResponse
     {
         User::destroy($id);
-        // return redirect('admin/products');
-        return Redirect::to('/profile.index');
+        return Redirect::to('/all-profile');
     }
 }
