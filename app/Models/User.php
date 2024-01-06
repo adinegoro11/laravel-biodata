@@ -35,6 +35,9 @@ class User extends Authenticatable
         'related_person',
         'willing_travel',
         'expected_salary',
+        'skills',
+        'signed_place',
+        'signed_date',
     ];
 
     /**

@@ -132,6 +132,12 @@
         </div>
 
         <div>
+            <x-input-label for="skills" :value="__('Skill')" />
+            <textarea id="skills" name="skills" rows="4" required class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan kemampuan dan keterampilan yang anda miliki">{{ old('skills', $user->skills) }}</textarea>
+            <x-input-error class="mt-2" :messages="$errors->get('skills')" />
+        </div>
+
+        <div>
             <x-input-label for="willing_travel" :value="__('Bersedia Ditempatkan di Seluruh Kantor Perusahaan')" />
             <select class="bg-gray-50 border text-gray-900 text-sm block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" name="willing_travel" id="willing_travel" required>
                 <option value="">-- Pilih --</option>
@@ -142,9 +148,21 @@
         </div>
 
         <div>
-            <x-input-label for="expected_salary" :value="__('Penghasilan yang Diharapkan')" />
+            <x-input-label for="expected_salary" :value="__('Penghasilan per Bulan yang Diharapkan')" />
             <x-text-input id="expected_salary" name="expected_salary" type="number" class="mt-1 block w-full" :value="old('expected_salary', $user->expected_salary)" required autocomplete="expected_salary" />
             <x-input-error class="mt-2" :messages="$errors->get('expected_salary')" />
+        </div>
+
+        <div>
+            <x-input-label for="signed_place" :value="__('Lokasi Dokumen')" />
+            <x-text-input id="signed_place" name="signed_place" type="text" class="mt-1 block w-full" :value="old('signed_place', $user->signed_place)" required autocomplete="signed_place" />
+            <x-input-error class="mt-2" :messages="$errors->get('signed_place')" />
+        </div>
+
+        <div>
+            <x-input-label for="signed_date" :value="__('Tanggal Dokumen')" />
+            <x-text-input id="signed_date" name="signed_date" type="date" class="mt-1 block w-full" :value="old('signed_date', $user->signed_date)" required autocomplete="signed_date" />
+            <x-input-error class="mt-2" :messages="$errors->get('signed_date')" />
         </div>
 
         <div class="flex items-center gap-4">

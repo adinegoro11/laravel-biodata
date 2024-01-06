@@ -31,6 +31,9 @@ class ProfileUpdateRequest extends FormRequest
             'related_person' => ['required', 'string','min:3'],
             'willing_travel' => ['required', 'string','min:2'],
             'expected_salary' => ['required', 'integer','min:2'],
+            'skills' => ['required', 'string','min:2'],
+            'signed_place' => ['required', 'string','min:2'],
+            'signed_date' => ['required', 'string','min:2'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
         ];
     }
