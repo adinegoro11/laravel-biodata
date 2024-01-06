@@ -8,9 +8,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
+     /**
+     * Display all users
+     */
+    public function index()
+    {
+        return 'admin';
+        
+        return view('listing.index')->with('data', [
+            'listings' => User::all(),
+        ]);
+    }
+
     /**
      * Display the user's profile form.
      */
