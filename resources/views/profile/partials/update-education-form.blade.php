@@ -1,9 +1,9 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('List Semua Peserta') }}
+<section>
+    <header>
+        <h2 class="text-lg font-medium text-gray-900">
+            {{ __('Riwayat Pendidikan') }}
         </h2>
-    </x-slot>
+    </header>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -57,4 +57,6 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+
+
+</section>
